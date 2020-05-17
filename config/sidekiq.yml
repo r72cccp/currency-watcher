@@ -1,0 +1,3 @@
+:queues:
+  - "main"
+:pidfile: tmp/sidekiq.pid
