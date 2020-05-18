@@ -3,7 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'awesome_print', '~> 1.8'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'colorize', '~> 0.8.1'
 gem 'dotenv-rails', '~> 2.7'
 gem 'jbuilder', '~> 2.7'
 gem 'mini_racer', platforms: :ruby
@@ -12,6 +14,7 @@ gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3'
 gem 'react_on_rails', '~> 11.3'
 gem 'sass-rails', '>= 6'
+gem 'shoulda-matchers', '~> 4.3'
 gem 'sidekiq', '~> 6.0'
 gem 'simplecov', '~> 0.18.5'
 gem 'turbolinks', '~> 5'

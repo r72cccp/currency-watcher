@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_05_18_151725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "currency_rates", force: :cascade do |t|
+    t.string "pair", comment: "Names of currencies in exchange pair. bought/sold"
+    t.decimal "buy", precision: 15, scale: 8, comment: "Buy price of bought currency in sold"
+    t.decimal "sell", precision: 15, scale: 8, comment: "Sell price of bought currency in sold"
+    t.decimal "ticker", precision: 10, comment: "Timestamp of market ticker"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pair"], name: "index_currency_rates_on_pair"
+    t.index ["ticker"], name: "index_currency_rates_on_ticker"
+  end
 
 end
