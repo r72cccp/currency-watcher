@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux'
-import { CURRENCY_MONITOR_NAME_UPDATE } from '../constants/currencyMonitorConstants'
+import { CURRENCY_MONITOR_TICKER_UPDATE } from '../constants/currencyMonitorConstants'
 
-const name = (state = '', action) => {
+const currencyRate = (state = '', action) => {
   switch (action.type) {
-    case CURRENCY_MONITOR_NAME_UPDATE:
-      return action.text
+    case CURRENCY_MONITOR_TICKER_UPDATE:
+      return action.currencyRate
     default:
       return state
   }
 }
 
-const currencyMonitorReducer = combineReducers({ name })
+const currencyMonitorReducer = combineReducers({ currencyRate })
 
 export default currencyMonitorReducer

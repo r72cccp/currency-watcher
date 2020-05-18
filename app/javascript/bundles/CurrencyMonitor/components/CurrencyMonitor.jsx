@@ -1,29 +1,32 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const CurrencyMonitor = ({ name, updateName }) => (
-  <div>
-    <h3>
-      Hello, {name}!
-    </h3>
-    <hr />
-    <form >
-      <label htmlFor="name">
-        Say hello to:
-      </label>
-      <input
-        id="name"
-        type="text"
-        value={name}
-        onChange={(e) => updateName(e.target.value)}
-      />
-    </form>
-  </div>
-)
+const CurrencyMonitor = ({ currencyRate }) => {
+  const {
+    buy,
+    pair,
+    sell,
+    ticker,
+  } = currencyRate
+  const currentTime = new Date(ticker * 1000)
+  return (
+    <div>
+      <h3>
+        Currency rate at {currentTime.toString()}
+      </h3>
+      <hr />
+      {pair}. Buy: {buy}, Sell: {sell}
+    </div>
+  )
+}
 
 CurrencyMonitor.propTypes = {
-  name: PropTypes.string.isRequired,
-  updateName: PropTypes.func.isRequired,
+  currencyRate: PropTypes.shape({
+    pair: PropTypes.string.isRequired,
+    buy: PropTypes.string.isRequired,
+    sell: PropTypes.string.isRequired,
+    ticker: PropTypes.number.isRequired,
+  }),
 }
 
 export default CurrencyMonitor

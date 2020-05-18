@@ -6,5 +6,9 @@ RSpec.describe WatcherController, type: :controller do
       get :index, params: {}
       expect(response).to be_successful
     end
+
+    it 'response contains the currency rate' do
+
+    end
   end
 end
