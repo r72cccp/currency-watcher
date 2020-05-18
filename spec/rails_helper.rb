@@ -6,6 +6,9 @@ require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'shoulda-matchers'
+
+require 'rake'
+Rails.application.load_tasks
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -28,7 +31,7 @@ Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f 
 begin
   ActiveRecord::Base.establish_connection adapter: 'sqlite3', database: ':memory:'
   ActiveRecord::Schema.verbose = false
-  load "#{Rails.root.to_s}/db/schema.rb"
+  load "#{Rails.root}/db/schema.rb"
 rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
