@@ -35,3 +35,5 @@ group :test do
 end
 
 gem "react_on_rails", "~> 11.3"
+
+gem 'mini_racer', platforms: :ruby
