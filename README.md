@@ -33,6 +33,12 @@ bundle exec rake spec
 
 * Services (job queues, cache servers, search engines, etc.)
 
+  Add to crontab rake task which fetch currency rate:
+  ```bash
+  crontab -e
+  * * * * * for i in {1..6}; do /bin/bash -l -c 'cd <path> && RAILS_ENV=development bundle exec rake currency_monitoring:fetch_currency_rate' & sleep 10; done
+  ```
+
 * Deployment instructions
 
 * ...
