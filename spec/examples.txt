@@ -1,5 +1,6 @@
 example_id                                           | status | run_time        |
 ---------------------------------------------------- | ------ | --------------- |
-./spec/integration/watcher_controller_spec.rb[1:1:1] | passed | 0.01104 seconds |
-./spec/models/currency_rate_spec.rb[1:1:1]           | passed | 0.00869 seconds |
-./spec/models/currency_rate_spec.rb[1:1:2]           | passed | 0.04472 seconds |
+./spec/integration/lib/currency_rate_spec.rb[1:1:1]  | passed | 0.12297 seconds |
+./spec/integration/watcher_controller_spec.rb[1:1:1] | passed | 0.02032 seconds |
+./spec/models/currency_rate_spec.rb[1:1:1]           | passed | 0.06609 seconds |
+./spec/models/currency_rate_spec.rb[1:1:2]           | passed | 0.00905 seconds |

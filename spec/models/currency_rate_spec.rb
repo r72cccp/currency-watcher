@@ -2,9 +2,9 @@
 require 'rails_helper'
 
 RSpec.describe CurrencyRate, type: :model do
-  context 'validations' do
-    it { should validate_presence_of :pair }
-    it { should validate_presence_of :ticker }
+  context 'with validations' do
+    it { is_expected.to validate_presence_of :pair }
+    it { is_expected.to validate_presence_of :ticker }
   end
 end
 
