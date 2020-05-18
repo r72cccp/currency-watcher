@@ -1,5 +1,6 @@
 # frozen_string_literal = true
 class WatcherController < ApplicationController
-  def view
+  def index
+    @currency_rate_props = { name: 'Stranger' }
   end
 end

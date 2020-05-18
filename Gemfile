@@ -6,9 +6,11 @@ ruby '2.7.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', '~> 2.7'
 gem 'jbuilder', '~> 2.7'
+gem 'mini_racer', platforms: :ruby
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3'
+gem 'react_on_rails', '~> 11.3'
 gem 'sass-rails', '>= 6'
 gem 'sidekiq', '~> 6.0'
 gem 'simplecov', '~> 0.18.5'
@@ -33,7 +35,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem "react_on_rails", "~> 11.3"
-
-gem 'mini_racer', platforms: :ruby
