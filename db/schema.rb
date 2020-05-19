@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_151725) do
+ActiveRecord::Schema.define(version: 2020_05_19_154634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_05_18_151725) do
     t.decimal "ticker", precision: 10, comment: "Timestamp of market ticker"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "forced", comment: "Installed by Admin"
+    t.index ["forced"], name: "index_currency_rates_on_forced"
     t.index ["pair"], name: "index_currency_rates_on_pair"
     t.index ["ticker"], name: "index_currency_rates_on_ticker"
   end

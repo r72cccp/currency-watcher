@@ -12,16 +12,18 @@ const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
   })
   const {
     buy,
+    forced,
     pair,
     sell,
     ticker,
   } = currencyRate
   const currentTime = new Date(ticker * 1000)
+  const at = forced ? 'till' : 'at'
 
   return (
     <div>
       <h3>
-        Currency rate at {currentTime.toString()}
+        Currency rate {at} {currentTime.toString()}
       </h3>
       <hr />
       {pair}. Buy: {buy}, Sell: {sell}
@@ -32,6 +34,7 @@ const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
 CurrencyMonitor.propTypes = {
   currencyRate: PropTypes.shape({
     pair: PropTypes.string.isRequired,
+    forced: PropTypes.bool,
     buy: PropTypes.string.isRequired,
     sell: PropTypes.string.isRequired,
     ticker: PropTypes.number.isRequired,

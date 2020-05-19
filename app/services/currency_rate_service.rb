@@ -1,5 +1,5 @@
 # frozen_string_literal = true
-class FetchCurrencyRate
+class CurrencyRateService
   class << self
     def run
       uri = URI('https://api.exmo.com/v1.1/ticker')
@@ -19,6 +19,18 @@ class FetchCurrencyRate
         currencyRate: CurrencyRate.current.slice(:buy, :pair, :sell, :ticker),
       }
       ActionCable.server.broadcast 'ticker_channel', currency_rate_props
+    end
+
+    def set_forced(pair:, buy:, sell:, expired_at:)
+      ticker = Time.parse(expired_at).to_i
+      CurrencyRate.where("forced IS TRUE AND ticker > #{ticker}").delete_all
+      CurrencyRate.create!({
+        buy: buy,
+        forced: true,
+        pair: pair,
+        sell: sell,
+        ticker: ticker,
+      })
     end
   end
 end

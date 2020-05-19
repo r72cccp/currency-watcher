@@ -40,6 +40,16 @@ bundle exec rake spec
   * * * * * for i in {1..6}; do /bin/bash -l -c 'cd <path> && RAILS_ENV=development bundle exec rake currency_monitoring:fetch_currency_rate' & sleep 10; done
   ```
 
+  To set forced currency rate from console, run:
+  ```bash
+  rake currency_monitoring:set_forced_currency_rate pair='USD/RUB' buy=77.99 sell=99.77 expired_at='2020-05-19 21:11:10'
+  ```
+
+  To renew currency rate from console, run:
+  ```bash
+  rake currency_monitoring:fetch_currency_rate
+  ```
+
 * Deployment instructions
 
 * ...
