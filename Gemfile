@@ -7,6 +7,7 @@ gem 'awesome_print', '~> 1.8'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'colorize', '~> 0.8.1'
 gem 'dotenv-rails', '~> 2.7'
+gem 'haml-rails', '~> 2.0'
 gem 'jbuilder', '~> 2.7'
 gem 'mini_racer', platforms: :ruby
 gem 'puma', '~> 4.1'

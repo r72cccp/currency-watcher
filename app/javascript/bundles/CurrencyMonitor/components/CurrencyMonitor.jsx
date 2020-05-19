@@ -1,24 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
-import consumer from '../../../channels/consumer'
-console.log('#7 - tickerChannel.js')
-const subscribeToChannel = (updateTicker) => {
-  consumer.subscriptions.create("TickerChannel", {
-    connected() {
-      console.log('#5 - connected')
-    },
-
-    disconnected() {
-      console.log('#9 - disconnected')
-    },
-
-    received(data) {
-      console.log('#16', { data }) //, store, state: store.getState() })
-      updateTicker(data)
-    }
-  })
-}
-
+import { subscribeToChannel } from '../../../channels/ticker_channel'
 
 const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
   const [subscribed, subscribe] = useState(0)
@@ -35,6 +17,7 @@ const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
     ticker,
   } = currencyRate
   const currentTime = new Date(ticker * 1000)
+
   return (
     <div>
       <h3>

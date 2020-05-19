@@ -6,6 +6,7 @@ SimpleCov.start 'rails' do
   add_group 'Controllers', 'app/controllers'
   add_group 'Models', 'app/models'
   add_group 'Helpers', 'app/helpers'
+  add_group 'Services', 'app/services'
   add_group 'Views', 'app/views'
 end
 SimpleCov.coverage_dir 'public/coverage'

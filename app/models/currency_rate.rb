@@ -7,13 +7,5 @@ class CurrencyRate < ApplicationRecord
     def current
       where(pair: 'USD/RUB').order(:ticker).last
     end
-
-    def push_ticker(data)
-      create!(data)
-      currency_rate_props = {
-        currencyRate: CurrencyRate.current.slice(:buy, :pair, :sell, :ticker),
-      }
-      ActionCable.server.broadcast 'ticker_channel', currency_rate_props
-    end
   end
 end
