@@ -1,8 +1,8 @@
 import { createStore } from 'redux'
-import currencyMonitorReducer from '../reducers/currencyMonitorReducer'
+import rootReducer from '../reducers/currencyMonitorReducer'
 
 const configureStore = (railsProps) => (
-  createStore(currencyMonitorReducer, railsProps)
+  createStore(rootReducer, railsProps)
 )
 
 export default configureStore

@@ -11,6 +11,7 @@ Things you may want to cover:
 * System dependencies
   Foreman (`gem install foreman`)
   PostgreSQL
+  redis
 
 * Configuration
   copy file `/config/.env.local.example` to `/config/.env.local`

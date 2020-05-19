@@ -9,12 +9,11 @@ namespace :currency_monitoring do
     result = Net::HTTP.get(uri)
     parsed_data = JSON.parse(result)
     usd_rub_pair_data = parsed_data['USD_RUB']
-    rec = CurrencyRate.create!({
+    CurrencyRate.push_ticker({
       buy: usd_rub_pair_data['buy_price'],
       pair: 'USD/RUB',
       sell: usd_rub_pair_data['sell_price'],
       ticker: usd_rub_pair_data['updated'],
     })
-    ap parsed_data: parsed_data, usd_rub_pair_data: usd_rub_pair_data, rec: rec
   end
 end

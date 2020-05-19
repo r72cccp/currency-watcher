@@ -1,7 +1,9 @@
-example_id                                           | status | run_time        |
----------------------------------------------------- | ------ | --------------- |
-./spec/integration/watcher_controller_spec.rb[1:1:1] | passed | 0.0376 seconds  |
-./spec/models/currency_rate_spec.rb[1:1:1]           | passed | 0.04326 seconds |
-./spec/models/currency_rate_spec.rb[1:1:2]           | passed | 0.01092 seconds |
-./spec/models/currency_rate_spec.rb[1:2:1]           | passed | 0.02292 seconds |
-./spec/models/currency_rate_spec.rb[1:3:1]           | passed | 0.04087 seconds |
+example_id                                           | status  | run_time        |
+---------------------------------------------------- | ------- | --------------- |
+./spec/channels/ticker_channel_spec.rb[1:1]          | pending | 0.00001 seconds |
+./spec/integration/watcher_controller_spec.rb[1:1:1] | passed  | 0.03642 seconds |
+./spec/integration/watcher_controller_spec.rb[1:1:2] | passed  | 0.01263 seconds |
+./spec/models/currency_rate_spec.rb[1:1:1]           | passed  | 0.01677 seconds |
+./spec/models/currency_rate_spec.rb[1:1:2]           | passed  | 0.00576 seconds |
+./spec/models/currency_rate_spec.rb[1:2:1]           | passed  | 0.0152 seconds  |
+./spec/models/currency_rate_spec.rb[1:3:1]           | passed  | 0.07998 seconds |
