@@ -5,11 +5,25 @@ const currencyRate = (state = '', action) => {
   switch (action.type) {
     case actionNames.CURRENCY_MONITOR_TICKER_UPDATE:
       return action.result.currencyRate
+    case `${actionNames.SET_FORCED_CURRENCY_RATE}__SUCCESS`:
+      return action.result.currencyRate
     default:
       return state
   }
 }
 
-const currencyMonitorReducer = combineReducers({ currencyRate })
+const forcedRates = (state = '', action) => {
+  switch (action.type) {
+    case `${actionNames.SET_FORCED_CURRENCY_RATE}__SUCCESS`:
+      return action.result.forcedRates
+    default:
+      return state
+  }
+}
 
-export default currencyMonitorReducer
+const rootReducer = combineReducers({
+  currencyRate,
+  forcedRates,
+})
+
+export default rootReducer

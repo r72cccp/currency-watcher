@@ -23,7 +23,7 @@ class CurrencyRateService
 
     def set_forced(pair:, buy:, sell:, expired_at:)
       ticker = Time.parse(expired_at).to_i
-      CurrencyRate.where(pair: 'USD/RUB', forced: true).delete_all
+      CurrencyRate.where(forced: true, pair: 'USD/RUB').where("ticker > #{ticker}").delete_all
       CurrencyRate.create!({
         buy: buy,
         forced: true,
