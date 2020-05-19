@@ -4,6 +4,7 @@ import { CURRENCY_MONITOR_TICKER_UPDATE } from '../constants/currencyMonitorCons
 const currencyRate = (state = '', action) => {
   switch (action.type) {
     case CURRENCY_MONITOR_TICKER_UPDATE:
+      console.log('#6', { state, action })
       return action.currencyRate
     default:
       return state

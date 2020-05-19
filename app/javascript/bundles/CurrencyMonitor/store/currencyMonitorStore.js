@@ -1,8 +1,10 @@
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import rootReducer from '../reducers/currencyMonitorReducer'
 
-const configureStore = (railsProps) => (
-  createStore(rootReducer, railsProps)
-)
-
-export default configureStore
+export const configureStore = (railsProps) => {
+  return createStore(rootReducer, railsProps, composeWithDevTools(
+    applyMiddleware(thunk)
+  ))
+}

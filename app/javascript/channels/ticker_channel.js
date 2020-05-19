@@ -1,4 +1,5 @@
 import consumer from "./consumer"
+import { updateTicker } from '../bundles/CurrencyMonitor/actions/currencyMonitorActionCreators'
 console.log('#2 - tickerChannel.js')
 consumer.subscriptions.create("TickerChannel", {
   connected() {
@@ -10,6 +11,7 @@ consumer.subscriptions.create("TickerChannel", {
   },
 
   received(data) {
-    console.log('#13', { data })
+    console.log('#16', { data }) //, store, state: store.getState() })
+    updateTicker(data)
   }
 });

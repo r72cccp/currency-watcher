@@ -13,7 +13,7 @@ class CurrencyRate < ApplicationRecord
       currency_rate_props = {
         currencyRate: CurrencyRate.current.slice(:buy, :pair, :sell, :ticker),
       }
-      ActionCable.server.broadcast 'ticker_channel', content: currency_rate_props
+      ActionCable.server.broadcast 'ticker_channel', currency_rate_props
     end
   end
 end
