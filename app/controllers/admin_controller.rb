@@ -1,5 +1,5 @@
 # frozen_string_literal = true
-class WatcherController < ApplicationController
+class AdminController < ApplicationController
   def index
     @currency_rate_props = {
       currencyRate: CurrencyRate.current.slice(:buy, :pair, :sell, :ticker),
