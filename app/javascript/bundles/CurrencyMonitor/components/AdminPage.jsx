@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const AdminPage = ({ currencyRate }) => {
+const AdminPage = ({ currencyRate, setForcedCurrencyRate }) => {
   const {
     buy,
     pair,
@@ -17,6 +17,7 @@ const AdminPage = ({ currencyRate }) => {
       </h3>
       <hr />
       {pair}. Buy: {buy}, Sell: {sell}
+      <button onClick={() => setForcedCurrencyRate({ buy: 77.22222, sell: 88.2222222, pair: 'USD/RUB', expiredAt: '2020-05-19 23:57:12' })}>set forced</button>
     </div>
   )
 }
@@ -28,6 +29,7 @@ AdminPage.propTypes = {
     sell: PropTypes.string.isRequired,
     ticker: PropTypes.number.isRequired,
   }),
+  setForcedCurrencyRate: PropTypes.func.isRequired,
 }
 
 export default AdminPage

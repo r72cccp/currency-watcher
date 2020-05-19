@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import { CURRENCY_MONITOR_TICKER_UPDATE } from '../constants/currencyMonitorConstants'
+import { actionNames } from '../constants/currencyMonitorConstants'
 
 const currencyRate = (state = '', action) => {
   switch (action.type) {
-    case CURRENCY_MONITOR_TICKER_UPDATE:
-      return action.currencyRate
+    case actionNames.CURRENCY_MONITOR_TICKER_UPDATE:
+      return action.result.currencyRate
     default:
       return state
   }

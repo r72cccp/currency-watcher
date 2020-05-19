@@ -9,6 +9,7 @@ namespace :currency_monitoring do
     CurrencyRateService.broadcast
   end
 
+  desc 'Set forced currency rate by Admin.'
   task set_forced_currency_rate: :environment do
     pair_name = ENV['pair']
     buy_price = ENV['buy']
