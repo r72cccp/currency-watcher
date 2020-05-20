@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 require 'simplecov'
 require 'webmock/rspec'
-require 'coveralls'
-Coveralls.wear!
 
 SimpleCov.start 'rails' do
   add_group 'Controllers', 'app/controllers'
