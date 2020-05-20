@@ -1,31 +1,9 @@
 # frozen_string_literal = true
-Arask.setup do |arask|
-  Rails.logger.ap "------------------------------- Arask.setup -------------------------------"
-  ## Examples
-
-  # Rake tasks with cron syntax
-  #arask.create task: 'send:logs', cron: '0 2 * * *' # At 02:00 every day
-  #arask.create task: 'update:cache', cron: '*/5 * * * *' # Every 5 minutes
-
-  # Scripts with interval (when time of day or month etc doesn't matter)
-  #arask.create script: 'puts "IM ALIVE!"', interval: :daily
-  #arask.create task: 'my:awesome_task', interval: :hourly
-  arask.create task: 'currency_monitoring:fetch_currency_rate', interval: 1.minutes
-
-  # Run an ActiveJob.
-  #arask.create job: 'ImportCurrenciesJob', interval: 1.month
-
-  # Only run on production
-  #arask.create script: 'Attachment.process_new', interval: 5.hours if Rails.env.production?
-
-  # Run first time. If the job didn't exist already when starting rails, run it:
-  #arask.create script: 'Attachment.process_new', interval: 5.hours, run_first_time: true
-
-  # On exceptions, send email with details
-  #arask.on_exception email: 'errors@example.com'
-
-  # Run code on exceptions
-  #arask.on_exception do |exception, arask_job|
-  #  MyExceptionHandler.new(exception)
-  #end
+Arask.setup(true) do |arask|
+  # arask.create task: 'currency_monitoring:fetch_currency_rate', interval: 30.seconds
+  arask.create script: 'CurrencyRateService.fetch_currency_rate', interval: 10.seconds
+  arask.create script: 'CurrencyRateService.broadcast', interval: 10.seconds
+  # arask.on_exception do |exception, arask_job|
+  #   raise(exception)
+  # end
 end

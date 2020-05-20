@@ -5,7 +5,7 @@ require 'net/http'
 namespace :currency_monitoring do
   desc 'Fetch current currency rate.'
   task fetch_currency_rate: :environment do
-    CurrencyRateService.run
+    CurrencyRateService.fetch_currency_rate
     CurrencyRateService.broadcast
   end
 
