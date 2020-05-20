@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import AdminPage from '../components/AdminPage'
-import * as actions from '../actions/currencyMonitorActionCreators'
+import AdminPage from './admin-page.view'
+import * as actions from '../../actions/currencyMonitorActionCreators'
 
 const mapStateToProps = (state) => ({ currencyRate: state.currencyRate, forcedRates: state.forcedRates })
 const mapDispatchToProps = (dispatch) => {

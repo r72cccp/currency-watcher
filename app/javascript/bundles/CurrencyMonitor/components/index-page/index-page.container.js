@@ -1,8 +1,8 @@
 // Simple example of a React "smart" component
 
 import { connect } from 'react-redux'
-import CurrencyMonitor from '../components/CurrencyMonitor'
-import * as actions from '../actions/currencyMonitorActionCreators'
+import CurrencyMonitor from './index-page.view'
+import * as actions from '../../actions/currencyMonitorActionCreators'
 
 // Which part of the Redux global state does our component want to receive as props?
 const mapStateToProps = (state) => ({ currencyRate: state.currencyRate })

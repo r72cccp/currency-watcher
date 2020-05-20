@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { actionNames } from '../constants/currencyMonitorConstants'
 
-const currencyRate = (state = '', action) => {
+const currencyRate = (state = {}, action) => {
   switch (action.type) {
     case actionNames.CURRENCY_MONITOR_TICKER_UPDATE:
       return action.result.currencyRate
@@ -12,7 +12,7 @@ const currencyRate = (state = '', action) => {
   }
 }
 
-const forcedRates = (state = '', action) => {
+const forcedRates = (state = [], action) => {
   switch (action.type) {
     case `${actionNames.SET_FORCED_CURRENCY_RATE}__SUCCESS`:
       return action.result.forcedRates
