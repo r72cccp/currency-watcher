@@ -20,7 +20,7 @@ namespace :currency_monitoring do
       puts "rake currency_monitoring:set_forced_currency_rate pair='USD/RUB' buy=71.5123 sell=71.64554 expired_at='2020-05-19 21:00:02'"
       puts 'your params are:'
       ap pair: pair_name, buy: buy_price, sell: sell_price, expired_at: expired_at, ENV: ENV
-      exit 1
+      raise ArgumentError
     end
     CurrencyRateService.set_forced(pair: pair_name, buy: buy_price, sell: sell_price, expired_at: expired_at)
     CurrencyRateService.broadcast

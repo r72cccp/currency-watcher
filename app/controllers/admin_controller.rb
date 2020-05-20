@@ -17,7 +17,7 @@ class AdminController < ApplicationController
 
   def set_currency_rate_props
     @currency_rate_props = {
-      currencyRate: CurrencyRate.current.slice(:buy, :pair, :sell, :ticker),
+      currencyRate: CurrencyRate.current&.slice(:buy, :pair, :sell, :ticker),
       forcedRates: CurrencyRate.where(forced: true, pair: 'USD/RUB').select(:buy, :pair, :sell, :ticker),
     }
   end
