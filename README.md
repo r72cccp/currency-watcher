@@ -1,4 +1,4 @@
-# Currency monitor [![Coverage Status](https://coveralls.io/repos/github/r72cccp/currency-watcher/badge.svg?branch=master)](https://coveralls.io/github/r72cccp/currency-watcher?branch=master)
+# Currency monitor [![Build Status](https://travis-ci.org/r72cccp/currency-watcher.svg?branch=master)](https://travis-ci.org/r72cccp/currency-watcher) [![Coverage Status](https://coveralls.io/repos/github/r72cccp/currency-watcher/badge.svg?branch=master)](https://coveralls.io/github/r72cccp/currency-watcher?branch=master)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
