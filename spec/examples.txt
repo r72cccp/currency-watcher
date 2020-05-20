@@ -1,13 +1,13 @@
 example_id                                           | status | run_time        |
 ---------------------------------------------------- | ------ | --------------- |
-./spec/channels/ticker_channel_spec.rb[1:1]          | passed | 0.00225 seconds |
-./spec/libs/currency_monitoring_tasks_spec.rb[1:1:1] | passed | 0.0329 seconds  |
-./spec/models/currency_rate_spec.rb[1:1:1]           | passed | 0.00629 seconds |
-./spec/models/currency_rate_spec.rb[1:1:2]           | passed | 0.00839 seconds |
-./spec/models/currency_rate_spec.rb[1:2:1]           | passed | 0.00829 seconds |
-./spec/models/currency_rate_spec.rb[1:3:1]           | passed | 0.01366 seconds |
-./spec/requests/admin_request_spec.rb[1:1:1]         | passed | 5.24 seconds    |
-./spec/requests/admin_request_spec.rb[1:2:1]         | passed | 0.02095 seconds |
-./spec/requests/admin_request_spec.rb[1:2:2]         | passed | 0.01898 seconds |
-./spec/requests/watcher_controller_spec.rb[1:1:1]    | passed | 0.01204 seconds |
-./spec/requests/watcher_controller_spec.rb[1:1:2]    | passed | 0.00793 seconds |
+./spec/channels/ticker_channel_spec.rb[1:1]          | passed | 0.00569 seconds |
+./spec/libs/currency_monitoring_tasks_spec.rb[1:1:1] | passed | 0.00921 seconds |
+./spec/models/currency_rate_spec.rb[1:1:1]           | passed | 0.00808 seconds |
+./spec/models/currency_rate_spec.rb[1:1:2]           | passed | 0.0078 seconds  |
+./spec/models/currency_rate_spec.rb[1:2:1]           | passed | 0.02054 seconds |
+./spec/models/currency_rate_spec.rb[1:3:1]           | passed | 0.05104 seconds |
+./spec/requests/admin_request_spec.rb[1:1:1]         | passed | 0.05292 seconds |
+./spec/requests/admin_request_spec.rb[1:2:1]         | passed | 0.01635 seconds |
+./spec/requests/admin_request_spec.rb[1:2:2]         | passed | 0.03299 seconds |
+./spec/requests/watcher_controller_spec.rb[1:1:1]    | passed | 0.02019 seconds |
+./spec/requests/watcher_controller_spec.rb[1:1:2]    | passed | 0.00899 seconds |
