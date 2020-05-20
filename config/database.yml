@@ -75,6 +75,6 @@ test:
 #
 production:
   <<: *default
-  database: currency_monitor_production
-  username: currency_monitor
-  password: <%= ENV['CURRENCY_MONITOR_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
