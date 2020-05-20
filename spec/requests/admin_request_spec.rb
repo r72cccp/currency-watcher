@@ -14,6 +14,7 @@ RSpec.describe 'Admins', type: :request do
 
   describe 'POST /admin' do
     let(:rake_task) { Rake::Task['currency_monitoring:set_forced_currency_rate'] }
+
     before do
       ENV['pair'] = 'USD/RUB'
       ENV['buy'] = '70.00'
