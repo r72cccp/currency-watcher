@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: currency_monitor_development
-  password: <%= ENV.fetch('DATABASE_PASSWORD') %>
-  username: <%= ENV.fetch('DATABASE_USERNAME') %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -74,5 +74,5 @@ test:
 production:
   <<: *default
   database: currency_monitor_production
-  username: currency_monitor
+  username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
