@@ -3,7 +3,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'simplecov'
 require 'coveralls'
 
-# Coveralls.wear! 'rails'
+Coveralls.wear! 'rails'
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start 'rails' do
   add_group 'Controllers', 'app/controllers'
