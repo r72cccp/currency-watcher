@@ -1,3 +1,0 @@
-:queues:
-  - "currency_monitor"
-:pidfile: tmp/sidekiq.pid

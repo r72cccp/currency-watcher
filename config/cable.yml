@@ -1,6 +1,8 @@
 development:
-  adapter: redis
-  url: <%= ENV['REDIS_URL'] || 'redis://localhost:6379/1' %>
+#   adapter: redis
+#   url: <%= ENV['REDIS_URL'] || 'redis://localhost:6379/1' %>
+#   channel_prefix: currency_monitor_development
+  adapter: postgresql
   channel_prefix: currency_monitor_development
 
 test:

@@ -3,9 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'arask', '~> 1.2'
 gem 'awesome_print', '~> 1.8'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'colorize', '~> 0.8.1'
+gem 'coveralls', require: false
 gem 'dotenv-rails', '~> 2.7'
 gem 'haml-rails', '~> 2.0'
 gem 'jbuilder', '~> 2.7'
@@ -16,7 +18,6 @@ gem 'react_on_rails', '~> 11.3'
 gem 'rspec-rails', '4.0.1'
 gem 'sass-rails', '>= 6'
 gem 'shoulda-matchers', '~> 4.3'
-gem 'sidekiq', '~> 6.0'
 gem 'simplecov', '~> 0.18.5'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
