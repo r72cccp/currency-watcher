@@ -13,6 +13,7 @@ gem 'mini_racer', platforms: :ruby
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3'
 gem 'react_on_rails', '~> 11.3'
+gem 'rspec-rails', '4.0.1'
 gem 'sass-rails', '>= 6'
 gem 'shoulda-matchers', '~> 4.3'
 gem 'sidekiq', '~> 6.0'
@@ -28,7 +29,6 @@ end
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails'
 end
 
 group :development do
