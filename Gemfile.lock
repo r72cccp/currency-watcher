@@ -291,7 +291,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3)
   react_on_rails (~> 11.3)
-  rspec-rails
+  rspec-rails (= 4.0.1)
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers (~> 4.3)
