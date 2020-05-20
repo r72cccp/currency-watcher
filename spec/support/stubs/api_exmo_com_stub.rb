@@ -13,7 +13,7 @@ module ApiExmoComStub
         "vol_curr": '1.73797203',
         "updated": 1589814724,
       },
-      "USD_RUB": {
+      "USDT_RUB": {
         "buy_price": '71.51',
         "sell_price": '71.68',
         "last_trade": '71.536486',
@@ -51,7 +51,7 @@ module ApiExmoComStub
         "vol_curr": '2.28725264',
         "updated": 1589826184,
       },
-      "USD_RUB": {
+      "USDT_RUB": {
         "buy_price": '71.51116',
         "sell_price": '71.5714',
         "last_trade": '71.524912',

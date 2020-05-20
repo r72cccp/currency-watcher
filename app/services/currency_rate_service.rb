@@ -6,7 +6,7 @@ class CurrencyRateService
       uri = URI('https://api.exmo.com/v1.1/ticker')
       result = Net::HTTP.get(uri)
       parsed_data = JSON.parse(result)
-      usd_rub_pair_data = parsed_data['USD_RUB']
+      usd_rub_pair_data = parsed_data['USDT_RUB']
       CurrencyRate.create!({
         buy: usd_rub_pair_data['buy_price'],
         pair: 'USD/RUB',
