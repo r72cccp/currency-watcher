@@ -1,0 +1,24 @@
+{
+  "application.js": "/packs/js/application-c61685392d03d4f49526.js",
+  "application.js.map": "/packs/js/application-c61685392d03d4f49526.js.map",
+  "currency-monitor-bundle.js": "/packs/js/currency-monitor-bundle-e1ddcdfb4a9f638db155.js",
+  "currency-monitor-bundle.js.map": "/packs/js/currency-monitor-bundle-e1ddcdfb4a9f638db155.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-c61685392d03d4f49526.js"
+      ],
+      "js.map": [
+        "/packs/js/application-c61685392d03d4f49526.js.map"
+      ]
+    },
+    "currency-monitor-bundle": {
+      "js": [
+        "/packs/js/currency-monitor-bundle-e1ddcdfb4a9f638db155.js"
+      ],
+      "js.map": [
+        "/packs/js/currency-monitor-bundle-e1ddcdfb4a9f638db155.js.map"
+      ]
+    }
+  }
+}
