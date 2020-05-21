@@ -11,7 +11,7 @@ Root path is: `/` - this is the page with currency realtime monitor;
 Also, the application provides the ability to set a fixed exchange rate for a certain time, during which the application
 will only show it.
 
-Afmin path is: `/admin` - this is the page with admin interface to force currency rate. You are can set fixed rate and
+Admin path is: `/admin` - this is the page with admin interface to force currency rate. You are can set fixed rate and
 this rate will shown on all opened pages;
 
 
