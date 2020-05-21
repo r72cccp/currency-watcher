@@ -1,11 +1,8 @@
 # frozen_string_literal = true
-require 'net/http'
-require 'openssl'
 class CurrencyRateService
   class << self
     def fetch_currency_rate
-      uri = URI('https://api.exmo.com/v1.1/ticker')
-      result = Net::HTTP.get(uri)
+      result = RestClientService.get('https://api.exmo.com/v1.1/ticker')
       parsed_data = JSON.parse(result)
       usd_rub_pair_data = parsed_data['USDT_RUB']
       CurrencyRate.create!({
