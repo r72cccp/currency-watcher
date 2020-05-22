@@ -2,9 +2,7 @@
 class CurrencyRateService
   class << self
     def fetch_currency_rate
-      result = RestClientService.get('https://api.exmo.com/v1.1/ticker')
-      parsed_data = JSON.parse(result)
-      usd_rub_pair_data = parsed_data['USDT_RUB']
+      usd_rub_pair_data = MarketClientService::ExmoAdapter.get
       CurrencyRate.create!({
         buy: usd_rub_pair_data['buy_price'],
         pair: 'USD/RUB',
