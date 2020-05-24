@@ -13,7 +13,7 @@ gem 'dotenv-rails', '~> 2.7'
 gem 'haml-rails', '~> 2.0'
 gem 'jbuilder', '~> 2.7'
 gem 'mini_racer', platforms: :ruby
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'rails', '~> 6.0.3'
 gem 'react_on_rails', '~> 11.3'
 gem 'rspec-rails', '4.0.1'
