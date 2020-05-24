@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -37,11 +39,14 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '3.28.0'
   gem 'coveralls', '0.8.23', require: false
-  gem 'selenium-webdriver'
+  gem 'cucumber', '3.1.2'
+  gem 'selenium-webdriver', '3.142.7'
   gem 'shoulda-matchers', '~> 4.3'
   gem 'simplecov', '~> 0.16.1'
   gem 'sqlite3', '~> 1.4'
   gem 'webdrivers'
 end
+
+gem "rspec", "~> 3.9"

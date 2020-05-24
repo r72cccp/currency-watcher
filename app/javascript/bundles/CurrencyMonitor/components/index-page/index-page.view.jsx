@@ -23,9 +23,9 @@ const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
   const at = forced ? 'till' : 'at'
 
   return (
-    <Root>
+    <Root id="index-page">
       <Column>
-        <Header>
+        <Header id="header">
           <h1>Currency rate monitor</h1>
         </Header>
         <Container>
@@ -40,7 +40,7 @@ const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
             </Row>
           </Column>
         </Container>
-        <Footer>
+        <Footer id="footer">
           The footer, (c) 2020
           <Link to="/admin">/admin</Link>
         </Footer>

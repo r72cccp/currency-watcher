@@ -1,0 +1,14 @@
+# Настройки remote webdriver
+webdriver_settings:
+  browser: :remote
+  desired_capabilities: :chrome
+  url: 'http://192.168.1.67:9515'
+app_host:
+  development: 'http://dev.fun-box.ru'
+
+# Настройки local webdriver
+# webdriver_settings:
+#   browser: 'chrome'
+#   driver_path: './spec/drivers/chromedriver'
+# app_host:
+#   development: 'http://dev.fun-box.ru'
