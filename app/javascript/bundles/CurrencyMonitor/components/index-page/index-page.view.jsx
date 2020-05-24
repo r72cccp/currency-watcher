@@ -28,7 +28,7 @@ const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
         <Header id="header">
           <h1>Currency rate monitor</h1>
         </Header>
-        <Container>
+        <Container id="body">
           <Column>
             <Row>
               <h3>
@@ -36,7 +36,9 @@ const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
               </h3>
             </Row>
             <Row>
-              {pair}. Buy: {buy}, Sell: {sell}
+              <span id="pair">{pair}</span>.
+              Buy: <span id="buy-price">{buy}</span>,
+              Sell: <span id="sell-price">{sell}</span>
             </Row>
           </Column>
         </Container>

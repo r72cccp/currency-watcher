@@ -20,3 +20,8 @@ Then(/^There is a footer on index page$/) do
   index_page = IndexPage.new
   index_page.footer_present?
 end
+
+Then(/^There is a currency rate info on index page$/) do
+  index_page = IndexPage.new
+  index_page.currency_rate_info_present?
+end

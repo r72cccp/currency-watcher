@@ -42,11 +42,11 @@ group :test do
   gem 'capybara', '3.28.0'
   gem 'coveralls', '0.8.23', require: false
   gem 'cucumber', '3.1.2'
+  gem 'rspec', '~> 3.9'
   gem 'selenium-webdriver', '3.142.7'
   gem 'shoulda-matchers', '~> 4.3'
   gem 'simplecov', '~> 0.16.1'
   gem 'sqlite3', '~> 1.4'
+  gem 'syntax', '~> 1.2'
   gem 'webdrivers'
 end
-
-gem "rspec", "~> 3.9"
