@@ -1,4 +1,5 @@
-# frozen_string_literal = true
+# frozen_string_literal: true
+
 class AdminController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :set_currency_rate_props

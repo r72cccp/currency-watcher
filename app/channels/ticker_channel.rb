@@ -1,4 +1,5 @@
-# frozen_string_literal = true
+# frozen_string_literal: true
+
 class TickerChannel < ApplicationCable::Channel
   def subscribed
     stream_from 'ticker_channel'

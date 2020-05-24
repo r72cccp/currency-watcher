@@ -1,4 +1,5 @@
-# frozen_string_literal = true
+# frozen_string_literal: true
+
 class CurrencyRateService
   class << self
     def fetch_currency_rate

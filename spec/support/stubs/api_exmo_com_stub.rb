@@ -1,4 +1,6 @@
-# frozen_string_literal = true
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/MethodLength, Style/NumericLiterals
 module ApiExmoComStub
   def self.ticker_response_first
     {
@@ -76,3 +78,4 @@ module ApiExmoComStub
     }
   end
 end
+# rubocop:enable Metrics/MethodLength, Style/NumericLiterals
