@@ -1,21 +1,32 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { subscribeToChannel, unsubscribeFromChannel } from '../../../../channels/ticker_channel'
 import { Column, Container, Footer, FormField, Header, Root, Row } from '../../shared/styled-components'
 import { ColumnBlock } from './styled'
 
-const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
+const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTicker }) => {
   const {
     buy,
     pair,
     sell,
     ticker,
   } = currencyRate
+  const tickerDate = new Date(ticker * 1000)
   const [formFields, setFormFields] = useState({
-    expiredAt: '2020-05-20 01:00:02',
+    expiredAt: tickerDate,
     newBuyValue: buy,
     newSellValue: sell,
   })
+  const [subscribed, subscribe] = useState(undefined)
+  useEffect(() => {
+    if (!subscribed) {
+      const subscription = subscribeToChannel(updateTicker)
+      subscribe(true)
+      return () => unsubscribeFromChannel(subscription)
+    }
+  }, [])
+
   const currentTime = new Date(ticker * 1000)
   const updateFormField = (fieldName) => {
     return (e) => {
@@ -71,7 +82,7 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
               />
             </FormField>
             <FormField>
-              <label htmlFor="expiredAt">Sell price:</label>
+              <label htmlFor="expiredAt">Expired at:</label>
               <input
                 name="expiredAt"
                 onChange={updateFormField('expiredAt')}
@@ -91,7 +102,7 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
                 return (
                   <div key={index}>
                     Buy: {forcedCurrencyRate.buy},
-                    Sell: {forcedCurrencyRate.sell}
+                    Sell: {forcedCurrencyRate.sell}&nbsp;
                     till: {forcedTillTime.toString()}
                   </div>
                 )

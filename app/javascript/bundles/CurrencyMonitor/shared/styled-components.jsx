@@ -38,6 +38,14 @@ export const Footer = styled(Row)`
 export const FormField = styled.div`
   padding-top: 4px;
   padding-bottom: 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  label {
+    flex-grow: 1;
+  }
 
   input {
     padding: 4px;
@@ -45,6 +53,7 @@ export const FormField = styled.div`
     border-radius: 4px;
     border: 1px solid #777;
     margin-left: 4px;
+    flex-grow: 2;
   }
 
   button {
@@ -54,5 +63,6 @@ export const FormField = styled.div`
     color: white;
     padding-left: 12px;
     padding-right: 12px;
+    flex-grow: 2;
   }
 `

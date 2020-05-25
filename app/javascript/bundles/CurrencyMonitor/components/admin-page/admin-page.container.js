@@ -7,8 +7,9 @@ const mapDispatchToProps = (dispatch) => {
   const setForcedCurrencyRate = ({ pair, buy, sell, expiredAt }) => {
     dispatch(actions.setForcedCurrencyRate({ pair, buy, sell, expiredAt }))
   }
+  const updateTicker = (data) => dispatch(actions.updateTicker(data))
 
-  return { setForcedCurrencyRate }
+  return { setForcedCurrencyRate, updateTicker }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminPage)
