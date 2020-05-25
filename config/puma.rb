@@ -15,9 +15,9 @@ threads min_threads_count, max_threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-puts "ENV['PORT']: #{ENV['PORT']}"
-ap ENV
-port ENV['PORT'] || 3000
+puts "ENV['PORT']: #{ENV['$PORT']}"
+puts ENV
+port ENV['PORT']
 
 # Specifies the `environment` that Puma will run in.
 #
