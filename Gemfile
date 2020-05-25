@@ -12,6 +12,7 @@ gem 'colorize', '~> 0.8.1'
 gem 'dotenv-rails', '~> 2.7'
 gem 'haml-rails', '~> 2.0'
 gem 'jbuilder', '~> 2.7'
+gem 'listen', '~> 3.2'
 gem 'mini_racer', platforms: :ruby
 gem 'puma', '4.3.5'
 gem 'rails', '~> 6.0.3'
@@ -32,7 +33,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '~> 3.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring'
   gem 'web-console', '>= 3.3.0'
