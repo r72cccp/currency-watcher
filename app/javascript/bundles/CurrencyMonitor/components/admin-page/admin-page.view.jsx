@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
+import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { subscribeToChannel, unsubscribeFromChannel } from '../../../../channels/ticker_channel'
 import { Column, Container, Footer, FormField, Header, Root, Row } from '../../shared/styled-components'
@@ -12,7 +13,7 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
     sell,
     ticker,
   } = currencyRate
-  const tickerDate = new Date(ticker * 1000)
+  const tickerDate = moment(new Date(ticker * 1000)).format('YYYY-MM-DD HH:mm:ss')
   const [formFields, setFormFields] = useState({
     expiredAt: tickerDate,
     newBuyValue: buy,
@@ -86,6 +87,8 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
               <input
                 name="expiredAt"
                 onChange={updateFormField('expiredAt')}
+                pattern="[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}"
+                title="Please, fill time in format: YYYY-MM-DD HH:MM:SS"
                 type="text"
                 value={formFields.expiredAt}
               />

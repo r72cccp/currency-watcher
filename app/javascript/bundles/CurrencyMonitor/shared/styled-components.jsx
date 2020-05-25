@@ -54,6 +54,12 @@ export const FormField = styled.div`
     border: 1px solid #777;
     margin-left: 4px;
     flex-grow: 2;
+
+    :invalid {
+      border-color: crimson !important;
+      background-color: crimson;
+      color: white;
+    }
   }
 
   button {
