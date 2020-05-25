@@ -14,6 +14,7 @@ will only show it.
 Admin path is: `/admin` - this is the page with admin interface to force currency rate. You are can set fixed rate and
 this rate will shown on all opened pages;
 
+* This app runned on Heroku: [https://ancient-temple-64629.herokuapp.com/](https://ancient-temple-64629.herokuapp.com/)
 
 * Ruby version
 

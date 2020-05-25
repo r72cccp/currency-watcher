@@ -43,8 +43,8 @@ const CurrencyMonitor = ({ currencyRate, updateTicker }) => {
           </Column>
         </Container>
         <Footer id="footer">
-          The footer, (c) 2020
-          <Link to="/admin">/admin</Link>
+          The footer, (c) 2020&nbsp;
+          <Link to="/admin">Admin page</Link>
         </Footer>
       </Column>
     </Root>

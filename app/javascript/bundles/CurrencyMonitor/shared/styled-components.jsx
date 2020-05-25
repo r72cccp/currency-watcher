@@ -29,4 +29,29 @@ export const Container = styled(Row)`
 `
 export const Footer = styled(Row)`
   padding: 20px;
+  a {
+    text-decoration: none;
+  }
+`
+
+export const FormField = styled.div`
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  input {
+    padding: 4px;
+    background-color: #eee;
+    border-radius: 4px;
+    border: 1px solid #777;
+    margin-left: 4px;
+  }
+
+  button {
+    padding: 4px;
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 `

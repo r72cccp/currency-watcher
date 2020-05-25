@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Footer, Header, Column, Root, Row } from '../../shared/styled-components'
+import { Column, Container, Footer, FormField, Header, Root, Row } from '../../shared/styled-components'
+import { ColumnBlock } from './styled'
 
 const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
   const {
@@ -44,14 +45,14 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
           </h3>
         </Header>
         <Container>
-          <Column>
+          <ColumnBlock>
             <div>
               {pair}. Buy: {buy}, Sell: {sell}
             </div>
             <h2>
               Set forced currency rate:
             </h2>
-            <div>
+            <FormField>
               <label htmlFor="newBuyValue">Buy price:</label>
               <input
                 name="newBuyValue"
@@ -59,8 +60,8 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
                 type="number"
                 value={formFields.newBuyValue}
               />
-            </div>
-            <div>
+            </FormField>
+            <FormField>
               <label htmlFor="newSellValue">Sell price:</label>
               <input
                 name="newSellValue"
@@ -68,8 +69,8 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
                 type="number"
                 value={formFields.newSellValue}
               />
-            </div>
-            <div>
+            </FormField>
+            <FormField>
               <label htmlFor="expiredAt">Sell price:</label>
               <input
                 name="expiredAt"
@@ -77,12 +78,12 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
                 type="text"
                 value={formFields.expiredAt}
               />
-            </div>
-            <div>
+            </FormField>
+            <FormField>
               <button onClick={handleSetForcedCurrencyRate}>Go</button>
-            </div>
-          </Column>
-          <Column>
+            </FormField>
+          </ColumnBlock>
+          <ColumnBlock>
             <h2>Earlier forced currency rates for {pair}</h2>
             {
               forcedRates.map((forcedCurrencyRate, index) => {
@@ -96,11 +97,11 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
                 )
               })
             }
-          </Column>
+          </ColumnBlock>
         </Container>
         <Footer>
-          The footer, (c) 2020
-          <Link to="/">Home</Link>
+          The footer, (c) 2020&nbsp;
+          <Link to="/">Home page</Link>
         </Footer>
       </Column>
     </Root>
