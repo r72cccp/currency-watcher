@@ -1,7 +1,8 @@
 import consumer from "./consumer"
 
+const channelName = 'TickerChannel'
 export const subscribeToChannel = (updateTicker) => {
-  consumer.subscriptions.create("TickerChannel", {
+  return consumer.subscriptions.create(channelName, {
     connected() {},
 
     disconnected() {},
@@ -10,4 +11,8 @@ export const subscribeToChannel = (updateTicker) => {
       updateTicker(data)
     },
   })
+}
+
+export const unsubscribeFromChannel = (subscription) => {
+  consumer.subscriptions.remove(subscription)
 }

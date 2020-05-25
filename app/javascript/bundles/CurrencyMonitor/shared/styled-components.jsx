@@ -26,6 +26,7 @@ export const Header = styled(Row)`
 export const Container = styled(Row)`
   flex-grow: 2;
   padding: 20px;
+  width: 1170px;
 `
 export const Footer = styled(Row)`
   padding: 20px;

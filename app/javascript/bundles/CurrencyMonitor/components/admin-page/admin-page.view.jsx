@@ -40,9 +40,9 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate }) => {
     <Root>
       <Column>
         <Header>
-          <h3>
+          <h2>
             Currency rate at {currentTime.toString()}
-          </h3>
+          </h2>
         </Header>
         <Container>
           <ColumnBlock>
