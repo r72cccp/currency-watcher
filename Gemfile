@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'listen', '~> 3.2'
 gem 'mini_racer', platforms: :ruby
 gem 'puma', '4.3.5'
-gem 'rails', '~> 6.0.3'
+gem 'rails', '6.0.3.1'
 gem 'react_on_rails', '~> 11.3'
 gem 'rspec-rails', '4.0.1'
 gem 'sass-rails', '>= 6'
