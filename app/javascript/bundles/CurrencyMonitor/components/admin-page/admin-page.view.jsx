@@ -3,8 +3,12 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { subscribeToChannel, unsubscribeFromChannel } from '../../../../channels/ticker_channel'
-import { Column, Container, Footer, FormField, Header, Root, Row } from '../../shared/styled-components'
+import { Column, Container, Footer, FormField, Header, Root } from '../../shared/styled-components'
 import { ColumnBlock } from './styled'
+
+const formatDate = (ticker) => {
+  return moment(new Date(ticker * 1000)).format('YYYY-MM-DD HH:mm:ss')
+}
 
 const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTicker }) => {
   const {
@@ -13,9 +17,9 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
     sell,
     ticker,
   } = currencyRate
-  const tickerDate = moment(new Date(ticker * 1000)).format('YYYY-MM-DD HH:mm:ss')
+  const expiredAt = formatDate(ticker)
   const [formFields, setFormFields] = useState({
-    expiredAt: tickerDate,
+    expiredAt,
     newBuyValue: buy,
     newSellValue: sell,
   })
@@ -28,7 +32,6 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
     }
   }, [])
 
-  const currentTime = new Date(ticker * 1000)
   const updateFormField = (fieldName) => {
     return (e) => {
       const value = e.currentTarget.value
@@ -53,7 +56,7 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
       <Column>
         <Header>
           <h2>
-            Currency rate at {currentTime.toString()}
+            Currency rate at {expiredAt.toString()}
           </h2>
         </Header>
         <Container>
@@ -101,7 +104,7 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
             <h2>Earlier forced currency rates for {pair}</h2>
             {
               forcedRates.map((forcedCurrencyRate, index) => {
-                const forcedTillTime = new Date(forcedCurrencyRate.ticker * 1000)
+                const forcedTillTime = formatDate(forcedCurrencyRate.ticker)
                 return (
                   <div key={index}>
                     Buy: {forcedCurrencyRate.buy},
