@@ -6,8 +6,9 @@ import { subscribeToChannel, unsubscribeFromChannel } from '../../../../channels
 import { Column, Container, Footer, FormField, Header, Root } from '../../shared/styled-components'
 import { ColumnBlock } from './styled'
 
-const formatDate = (ticker) => {
-  return moment(new Date(ticker * 1000)).format('YYYY-MM-DD HH:mm:ss')
+const dateTimeFormat = 'YYYY-MM-DD HH:mm:ss'
+const utcToLocalDate = (ticker) => {
+  return moment.utc(new Date(ticker * 1000)).local().format(dateTimeFormat)
 }
 
 const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTicker }) => {
@@ -17,7 +18,7 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
     sell,
     ticker,
   } = currencyRate
-  const expiredAt = formatDate(ticker)
+  const expiredAt = utcToLocalDate(ticker)
   const [formFields, setFormFields] = useState({
     expiredAt,
     newBuyValue: buy,
@@ -104,7 +105,7 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
             <h2>Earlier forced currency rates for {pair}</h2>
             {
               forcedRates.map((forcedCurrencyRate, index) => {
-                const forcedTillTime = formatDate(forcedCurrencyRate.ticker)
+                const forcedTillTime = utcToLocalDate(forcedCurrencyRate.ticker)
                 return (
                   <div key={index}>
                     Buy: {forcedCurrencyRate.buy},

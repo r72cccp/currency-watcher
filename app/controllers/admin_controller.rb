@@ -8,7 +8,7 @@ class AdminController < ApplicationController
     render :index, status: :ok
   end
 
-  def set_forced
+  def update
     CurrencyRateService.set_forced(forced_params)
     CurrencyRateService.broadcast
     render json: @currency_rate_props, status: :ok

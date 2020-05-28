@@ -10,6 +10,6 @@ export const setForcedCurrencyRate = ({ pair, buy, sell, expiredAt }) => {
     actionName: actionNames.SET_FORCED_CURRENCY_RATE,
     method: RestMethods.post,
     params: { pair, buy, sell, expiredAt },
-    path: '/admin'
+    path: '/admin/forced-currency-rates'
   })
 }
