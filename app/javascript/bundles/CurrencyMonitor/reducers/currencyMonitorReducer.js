@@ -15,7 +15,6 @@ const currencyRate = (state = {}, action) => {
 const forcedRates = (state = [], action) => {
   switch (action.type) {
     case `${actionNames.SET_FORCED_CURRENCY_RATE}__SUCCESS`:
-      console.log('#18', { action })
       return action.result.forcedRates
     default:
       return state

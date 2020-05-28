@@ -11,6 +11,10 @@ const utcToLocalDate = (ticker) => {
   return moment.utc(new Date(ticker * 1000)).local().format(dateTimeFormat)
 }
 
+const localToUtcTime = (localeTime) => {
+  return moment(localeTime, dateTimeFormat).format(`${dateTimeFormat} ZZ`)
+}
+
 const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTicker }) => {
   const {
     buy,
@@ -48,7 +52,7 @@ const AdminPage = ({ currencyRate, forcedRates, setForcedCurrencyRate, updateTic
       buy: formFields.newBuyValue,
       sell: formFields.newSellValue,
       pair,
-      expiredAt: formFields.expiredAt,
+      expiredAt: localToUtcTime(formFields.expiredAt),
     })
   }
 
