@@ -1,23 +1,23 @@
 {
-  "application.js": "/packs-test/js/application-dbb80d8554734af833ca.js",
-  "application.js.map": "/packs-test/js/application-dbb80d8554734af833ca.js.map",
-  "currency-monitor-bundle.js": "/packs-test/js/currency-monitor-bundle-a4b3a1bad544d79a7223.js",
-  "currency-monitor-bundle.js.map": "/packs-test/js/currency-monitor-bundle-a4b3a1bad544d79a7223.js.map",
+  "application.js": "/packs-test/js/application-abd21afb0fab04030673.js",
+  "application.js.map": "/packs-test/js/application-abd21afb0fab04030673.js.map",
+  "currency-monitor-bundle.js": "/packs-test/js/currency-monitor-bundle-b6da6bbd3083158f765b.js",
+  "currency-monitor-bundle.js.map": "/packs-test/js/currency-monitor-bundle-b6da6bbd3083158f765b.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs-test/js/application-dbb80d8554734af833ca.js"
+        "/packs-test/js/application-abd21afb0fab04030673.js"
       ],
       "js.map": [
-        "/packs-test/js/application-dbb80d8554734af833ca.js.map"
+        "/packs-test/js/application-abd21afb0fab04030673.js.map"
       ]
     },
     "currency-monitor-bundle": {
       "js": [
-        "/packs-test/js/currency-monitor-bundle-a4b3a1bad544d79a7223.js"
+        "/packs-test/js/currency-monitor-bundle-b6da6bbd3083158f765b.js"
       ],
       "js.map": [
-        "/packs-test/js/currency-monitor-bundle-a4b3a1bad544d79a7223.js.map"
+        "/packs-test/js/currency-monitor-bundle-b6da6bbd3083158f765b.js.map"
       ]
     }
   }

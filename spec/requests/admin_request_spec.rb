@@ -12,7 +12,7 @@ RSpec.describe 'Admins', type: :request do
     end
   end
 
-  describe 'POST /admin' do
+  describe 'POST /admin/forced-currency-rates' do
     let(:rake_task) { Rake::Task['currency_monitoring:set_forced_currency_rate'] }
 
     before do
@@ -32,14 +32,24 @@ RSpec.describe 'Admins', type: :request do
     it 'returns http success' do
       rake_task.reenable
       rake_task.invoke
-      post '/admin', params: { pair: 'USD/RUB', buy: 71.11, sell: 73.33, expiredAt: '2020-05-20 11:12:13 +0500' }
+      post '/admin/forced-currency-rates', params: {
+        pair: 'USD/RUB',
+        buy: 71.11,
+        sell: 73.33,
+        expiredAt: '2020-05-20 11:12:13 +0500',
+      }
       expect(response).to have_http_status(:success)
     end
 
     it 'forces existed currency rates with bigger expired date' do
       rake_task.reenable
       rake_task.invoke
-      post '/admin', params: { pair: 'USD/RUB', buy: 71.11, sell: 73.33, expiredAt: '2020-05-20 11:12:13 +0500' }
+      post '/admin/forced-currency-rates', params: {
+        pair: 'USD/RUB',
+        buy: 71.11,
+        sell: 73.33,
+        expiredAt: '2020-05-20 11:12:13 +0500',
+      }
       currency_rate = CurrencyRate.current.slice(:buy, :pair, :sell, :ticker)
       expect(currency_rate[:ticker]).to eq 1589955133
     end
