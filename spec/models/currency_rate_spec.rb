@@ -28,4 +28,17 @@ RSpec.describe CurrencyRate do
       expect(described_class.current['ticker']).to eq 1589826235
     end
   end
+
+  describe 'with application record' do
+    before do
+      ENV['ROW_LIMIT'] = '10'
+      13.times do |i|
+        CurrencyRateService.set_forced(pair: 'USD/RUB', buy: 80 + i, sell: 82 + i, expired_at: '2020-06-01 22:14:00 +0500')
+      end
+    end
+
+    it 'must only limited row count in model table' do
+      expect(described_class.count).to eq ENV['ROW_LIMIT'].to_i
+    end
+  end
 end
